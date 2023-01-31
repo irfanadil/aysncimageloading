@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), AdapterClickListener {
 
     private fun observeData() {
         lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+            //lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { uiState ->
                     when (uiState) {
                         is UrlViewState.Success -> {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), AdapterClickListener {
                         else -> {}
                     }
                 }
-            }
+            //}
         }
     }
 
